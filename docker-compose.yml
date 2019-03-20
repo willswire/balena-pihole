@@ -13,5 +13,5 @@ services:
     volumes:
       - 'pihole:/etc/pihole'
       - 'dnsmasq:/etc/dnsmasq.d'
-    entrypoint: ['/bin/bash', '-c', 'echo "bind-interfaces" >> /etc/dnsmasq.conf; /s6-init']
+    entrypoint: ['/bin/bash', '-c', 'echo "localhost $HOSTNAME" >> /etc/hosts; echo "bind-interfaces" >> /etc/dnsmasq.conf; /s6-init']
     network_mode: host
