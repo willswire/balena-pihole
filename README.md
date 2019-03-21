@@ -22,10 +22,6 @@ Application envionment variables apply to all services within the application, a
 
 |Name|Value|Purpose|
 |---|---|---|
-
-
-|Name|Value|Purpose|
-|---|---|---|
 |`DNS1`|`1.1.1.1`|To tell Pi-hole where to forward DNS requests that aren’t blocked. We’re using the Cloudflare DNS servers here but you can specify your own.|
 |`DNS2`|`1.0.0.1`|Secondary DNS server - see above.|
 |`INTERFACE`|`eth0`|We set this to `eth0` to indicate we want DNSMASQ to listen on the ethernet interface of the Raspberry Pi. If you're connecting to your network with WiFi replace this with `wlan0`|
