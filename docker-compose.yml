@@ -6,12 +6,12 @@ volumes:
 
 services:
   pihole:
-    image: pihole/pihole:4.2.2_armhf
+    image: pihole/pihole:4.2.2-1_armhf
     ports:
       - '80:80/tcp'
       - '80:80/udp'
     volumes:
       - 'pihole:/etc/pihole'
       - 'dnsmasq:/etc/dnsmasq.d'
-    entrypoint: ['/bin/bash', '-c', 'echo "localhost $HOSTNAME" >> /etc/hosts; echo "bind-interfaces" >> /etc/dnsmasq.conf; /s6-init']
+    entrypoint: ['/bin/bash', '-c', 'echo "127.0.0.1 $HOSTNAME" >> /etc/hosts; echo "bind-interfaces" >> /etc/dnsmasq.conf; /s6-init']
     network_mode: host
