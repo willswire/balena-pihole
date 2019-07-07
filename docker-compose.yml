@@ -6,7 +6,7 @@ volumes:
 
 services:
   pihole:
-    image: pihole/pihole:4.3_armhf
+    image: pihole/pihole:4.3.1-4_armhf
     ports:
       - '80:80/tcp'
       - '80:80/udp'
